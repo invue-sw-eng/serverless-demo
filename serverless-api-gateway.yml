@@ -1,0 +1,39 @@
+service: serverless-demo
+
+plugins:
+  - serverless-plugin-scripts
+
+custom:
+  scripts:
+    hooks:
+      'package:initialize': npm install
+      'deploy:function:initialize': npm install
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  region: your-region
+  memorySize: 256
+  timeout: 240
+  deploymentBucket:
+    name: your-bucket-for-deployment
+    serverSideEncryption: AES256
+
+package:
+  include:
+    - src/**
+  exclude:
+    - .git/**
+    - "*.md"
+    - package.json
+    - package-lock.json
+    - "*.yml"
+
+functions:
+  APIGateway:
+    handler: src/APIGatewayHandler.handler
+    events:
+      - http:
+          method: ANY
+          path: /
