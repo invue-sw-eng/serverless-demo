@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/invue-sw-eng/serverless-demo/issues"
   },
-  "homepage": "https://github.com/invue-sw-eng/serverless-demo#readme"
+  "homepage": "https://github.com/invue-sw-eng/serverless-demo#readme",
+  "devDependencies": {
+    "serverless": "^1.34.1",
+    "serverless-plugin-scripts": "^1.0.2"
+  }
 }
