@@ -6,8 +6,8 @@ plugins:
 custom:
   scripts:
     hooks:
-      'package:initialize': npm install
-      'deploy:function:initialize': npm install
+      "package:initialize": npm install
+      "deploy:function:initialize": npm install
 
 provider:
   name: aws
@@ -31,8 +31,8 @@ package:
     - "*.yml"
 
 functions:
-  HelloWorld:
-    handler: src/HelloWorldHandler.handler
+  TemperatureLambda:
+    handler: src/TemperatureHandler.handler
     events:
       - schedule:
           name: serverless-demo-event
