@@ -6,9 +6,9 @@ const handler = async (event) => {
         "headers": {
             "Authorization": "XYZ"
         },
-        "body": JSON.stringify({"message": `Hello, ${event.queryStringParameters.name}`}),
+        "body": JSON.stringify({ "message": `Hello, ${event.queryStringParameters.name}` }),
         "isBase64Encoded": false
-    }; 
+    };
 }
 
 module.exports = {
